@@ -6,3 +6,7 @@ This is an application being built to serve as a scheduling system for Ajman Uni
 -Modifying existing events details
 -Deleting events
 -Viewing events after they have been deleted
+
+Further features and functionalities will continue to be added through pull requests.
+
+Updates:
