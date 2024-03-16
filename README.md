@@ -1,1 +1,1 @@
-# GProject
+# Ajman University Campus Event Scheduler
