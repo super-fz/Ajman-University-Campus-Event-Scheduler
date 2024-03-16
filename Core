@@ -1,0 +1,57 @@
+class Event:
+    def __init__(self, title, date, time, location, description):
+        self.title = title
+        self.date = date
+        self.time = time
+        self.location = location
+        self.description = description
+
+class EventScheduler:
+    def __init__(self):
+        self.events = []
+
+    def add_event(self, event):
+        self.events.append(event)
+
+    def delete_event(self, event_title):
+        for event in self.events:
+            if event.title == event_title:
+                self.events.remove(event)
+                return True
+        return False
+
+    def view_events(self):
+        if not self.events:
+            print("No events scheduled.")
+        else:
+            for event in self.events:
+                print(f"Title: {event.title}")
+                print(f"Date: {event.date}")
+                print(f"Time: {event.time}")
+                print(f"Location: {event.location}")
+                print(f"Description: {event.description}")
+                print()
+
+if __name__ == "__main__":
+    scheduler = EventScheduler()
+
+    # Sample events
+    event1 = Event("Guest Lecture", "2024-03-20", "10:00 AM", "Lecture Hall A", "Topic: Machine Learning")
+    event2 = Event("Sports Tournament", "2024-03-25", "2:00 PM", "Sports Complex", "Inter-college competition")
+    scheduler.add_event(event1)
+    scheduler.add_event(event2)
+
+    # Viewing events
+    print("All Events:")
+    scheduler.view_events()
+
+    # Deleting an event
+    event_title_to_delete = "Guest Lecture"
+    if scheduler.delete_event(event_title_to_delete):
+        print(f"{event_title_to_delete} has been deleted.")
+    else:
+        print(f"{event_title_to_delete} not found.")
+
+    # Viewing events after deletion
+    print("\nRemaining Events:")
+    scheduler.view_events()
